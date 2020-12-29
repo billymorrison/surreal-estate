@@ -1,0 +1,14 @@
+.alert {
+    width: 100%;
+    padding: 10px;
+}
+
+.error {
+    border: 1px solid red;
+    background-color: rgb(250, 203, 184);
+}
+
+.success {
+    border: 1px solid green;
+    background-color: rgb(202, 250, 198);
+}

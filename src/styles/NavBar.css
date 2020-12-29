@@ -1,0 +1,16 @@
+.navbar {
+    background-color: white;
+    border-bottom-color: gray;
+    display: flex;
+}
+
+.logo {
+    max-width: 200px;
+}
+
+.navbar-links-item {
+    display: inline-block;
+    margin: 0;
+    padding: 10px 20px;
+    text-decoration: none;
+}
