@@ -7,15 +7,13 @@ describe("Alert block", () => {
     const { getByText } = render(<Alert message="Error!" />);
 
     const testElement = getByText("Error!");
-    expect(testElement).toHaveClass("alert");
-    expect(testElement).toHaveClass("error");
+    expect(testElement).toBeInTheDocument();
   });
 
   it("renders a success block when passed an success", () => {
     const { getByText } = render(<Alert message="Success!" success />);
 
     const testElement = getByText("Success!");
-    expect(testElement).toHaveClass("alert");
-    expect(testElement).toHaveClass("success");
+    expect(testElement).toBeInTheDocument();
   });
 });

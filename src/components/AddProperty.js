@@ -1,7 +1,53 @@
 import React, { useState } from "react";
-import "../styles/AddProperty.css";
+import styled from "styled-components";
 import postProperty from "../requests/postProperty";
 import Alert from "./Alert";
+
+export const Form = styled.form`
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  font-weight: 600;
+
+  & label {
+    display: flex;
+    flex-direction: column;
+  }
+
+  & .double-field {
+    display: flex;
+    justify-content: space-between;
+
+    & > * {
+      width: 49%;
+    }
+  }
+
+  & input,
+  select {
+    height: 35px;
+    border-radius: 7px;
+    border: none;
+    padding: 0px 10px;
+    margin: 3px 0px 10px 0px;
+  }
+`;
+
+export const Button = styled.button`
+  border: 1px #774871 solid;
+  background-color: #c7b3c4;
+  height: 35px;
+  border-radius: 7px;
+  padding: 0px 10px;
+  margin: 3px 0px 10px 0px;
+  width: 100%;
+
+  &:hover {
+    background-color: #774871;
+    color: #fff;
+    cursor: pointer;
+  }
+`;
 
 function AddProperty() {
   const initialState = {
@@ -38,7 +84,7 @@ function AddProperty() {
       <p>
         To add a property to our listings page please fill out the form below.
       </p>
-      <form onSubmit={(e) => handleAddProperty(e, setAlert)}>
+      <Form onSubmit={(e) => handleAddProperty(e, setAlert)}>
         {alert.message && alert.isSuccess && (
           <Alert message={alert.message} success />
         )}
@@ -134,8 +180,8 @@ function AddProperty() {
             type="email"
           />
         </label>
-        <button type="submit">Add</button>
-      </form>
+        <Button type="submit">Add</Button>
+      </Form>
     </div>
   );
 }
