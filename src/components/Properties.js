@@ -1,5 +1,6 @@
 import Axios from "axios";
 import React, { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 import styled from "styled-components";
 import PropertyCard from "./PropertyCard";
 import Alert from "./Alert";
@@ -7,6 +8,9 @@ import Alert from "./Alert";
 const PropertiesGrid = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
+  position: relative;
+  left: 300px;
+  width: 80%;
 `;
 
 function Properties() {
@@ -23,6 +27,15 @@ function Properties() {
         })
       );
   }, []);
+
+  const { search } = useLocation();
+  useEffect(() => {
+    Axios.get(`http://localhost:4000/api/v1/propertylisting${search}`)
+      .then(({ data }) => {
+        setProperties(data);
+      })
+      .catch((err) => console.log(err));
+  }, [search]);
 
   return (
     <PropertiesGrid>

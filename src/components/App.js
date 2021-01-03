@@ -5,9 +5,11 @@ import styled from "styled-components";
 import NavBar from "./NavBar";
 import Properties from "./Properties";
 import AddProperty from "./AddProperty";
+import SideBar from "./SideBar";
 
 const AppArea = styled.main`
-  padding: 30px 60px;
+  padding: 30px 20px;
+  display: flex;
 `;
 
 function App() {
@@ -16,7 +18,10 @@ function App() {
       <NavBar />
       <AppArea>
         <Switch>
-          <Route exact path="/" component={Properties} />
+          <Route exact path="/">
+            <SideBar />
+            <Properties />
+          </Route>
           <Route exact path="/add-property" component={AddProperty} />
         </Switch>
       </AppArea>

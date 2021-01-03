@@ -28,11 +28,11 @@ function NavBar() {
         src="https://mcrcodes.s3.eu-west-2.amazonaws.com/course/surreal-estate/logo.png"
         alt="Surreal Estate Logo"
       />
-      <ul className="navbar-links">
-        <NavLink className="navbar-links-item">
+      <ul>
+        <NavLink>
           <Link to="/">View Properties</Link>
         </NavLink>
-        <NavLink className="navbar-links-item">
+        <NavLink>
           <Link to="/add-property">Add a Property</Link>
         </NavLink>
       </ul>
