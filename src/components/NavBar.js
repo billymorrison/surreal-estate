@@ -5,8 +5,9 @@ import styled from "styled-components";
 
 const Navigation = styled.header`
   background-color: white;
-  border-bottom-color: gray;
+  border-bottom: 1px solid #c9c9c9;
   display: flex;
+  z-index: 1;
 `;
 
 const LogoImage = styled.img`

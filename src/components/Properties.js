@@ -9,7 +9,7 @@ const PropertiesGrid = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   position: relative;
-  left: 300px;
+  left: 350px;
   width: 80%;
 `;
 
