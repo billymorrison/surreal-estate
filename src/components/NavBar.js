@@ -2,6 +2,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import FacebookLogin from "react-facebook-login";
+import PropTypes from "prop-types";
 
 const Navigation = styled.header`
   background-color: white;
@@ -21,7 +23,7 @@ const NavLink = styled.li`
   text-decoration: none;
 `
 
-function NavBar() {
+function NavBar({onLogin}) {
   return (
     <Navigation>
       <LogoImage
@@ -37,8 +39,18 @@ function NavBar() {
           <Link to="/add-property">Add a Property</Link>
         </NavLink>
       </ul>
+      <FacebookLogin 
+        appId="455818988875457"
+        autoLoad
+        fields="name,email,picture"
+        callback={onLogin}
+      />
     </Navigation>
   );
 }
 
 export default NavBar;
+
+NavBar.propTypes = {
+  onLogin: PropTypes.func.isRequired,
+};
