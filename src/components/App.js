@@ -14,7 +14,7 @@ const AppArea = styled.main`
 
 function App() {
   return (
-    <>
+    <div data-testid="app">
       <NavBar />
       <AppArea>
         <Switch>
@@ -25,7 +25,7 @@ function App() {
           <Route exact path="/add-property" component={AddProperty} />
         </Switch>
       </AppArea>
-    </>
+    </div>
   );
 }
 

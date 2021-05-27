@@ -6,7 +6,7 @@ import NavBar from "../components/NavBar";
 test("Renders the nav bar with links", () => {
   render(
     <BrowserRouter>
-      <NavBar />
+      <NavBar onLogin={() => "test"} />
     </BrowserRouter>
   );
   const linkElement = screen.getByText(/View Properties/i);

@@ -3,7 +3,7 @@ import { BrowserRouter } from "react-router-dom";
 import { render } from "@testing-library/react";
 import App from "../components/App";
 
-xtest("Renders the initial app with H2", () => {
+test("Renders the initial app", () => {
   const { getByTestId } = render(
     <BrowserRouter>
       <App />
